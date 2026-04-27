@@ -244,49 +244,78 @@ body.dark-mode .about-card {
 .work {
   padding: 80px 20px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
+/* TIMELINE CONTAINER */
 .timeline {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px; /* 🔥 increased gap (3 line spacing feel) */
 }
 
+/* EACH PROJECT CARD */
 .timeline-item {
   width: 70%;
   margin: auto;
-  padding: 20px;
+  padding: 25px;
   background: #f9fafb;
   border-left: 4px solid #6366f1;
-  border-radius: 10px;
-  transition: 0.3s;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+/* 🔥 Divider line between items */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+}
+
+/* Last item ku divider remove */
+.timeline-item:last-child::after {
+  display: none;
+}
+
+/* DARK MODE */
 body.dark-mode .timeline-item {
   background: rgba(255,255,255,0.04);
 }
 
+body.dark-mode .timeline-item::after {
+  background: rgba(255,255,255,0.1);
+}
+
+/* HOVER EFFECT */
 .timeline-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* PROJECT LINKS */
 .project-links a {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-right: 10px;
-  padding: 6px 12px;
+  padding: 8px 14px;
   background: #6366f1;
   color: white;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  transition: 0.3s;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
 }
 
+/* BUTTON HOVER */
 .project-links a:hover {
   background: #4f46e5;
+  transform: translateY(-2px);
 }
 
 /* RESUME SECTION */
